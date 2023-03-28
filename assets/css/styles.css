@@ -850,7 +850,6 @@ img {
   height: 0%;
   background-image: linear-gradient(to top, rgb(255, 0, 0), rgb(0, 0, 255), rgb(0, 255, 0), rgb(255, 0, 0), rgb(0, 0, 255), rgb(0, 255, 0), rgb(255, 0, 0), rgb(0, 0, 255), rgb(0, 255, 0));
   border-radius: 20px;
-  /* box-shadow: 0px -8px 0px 0px green; */
   z-index: 200;
 }
 .right_bar {
@@ -858,6 +857,5 @@ img {
   height: 0%;
   background-image: linear-gradient(to top, rgb(255, 0, 0), rgb(0, 0, 255), rgb(0, 255, 0), rgb(255, 0, 0), rgb(0, 0, 255), rgb(0, 255, 0), rgb(255, 0, 0), rgb(0, 0, 255), rgb(0, 255, 0));
   border-radius: 20px;
-  /* box-shadow: 0px -8px 0px 0px green; */
   z-index: 200;
 }
