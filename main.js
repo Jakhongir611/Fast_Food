@@ -2,6 +2,7 @@ let doc = document
 let body = doc.body
 let form_modal = doc.forms.form_modal
 
+//якорь
 let home = doc.querySelectorAll('.nav__link')[0]
 let about = doc.querySelectorAll('.nav__link')[1]
 let services = doc.querySelectorAll('.nav__link')[2]
@@ -38,7 +39,7 @@ contact.addEventListener('click', (event) => {
 
 
 
-
+//можно выбрать только одну кнопку
 let man = doc.form_modal.man
 let woman = doc.form_modal.woman
 
@@ -50,7 +51,8 @@ woman.addEventListener('click', () => {
 })
 
 
-
+//модалка
+//если модалка открывается то меню закрывается
 let modal = doc.querySelector('.button_modal')
 let modal_okno = doc.querySelector('.modal')
 let cros = doc.querySelector('.x')
@@ -72,6 +74,8 @@ let func2 = () => {
 }
 
 
+//бургер меню
+//если меню открывается то модалка закрывается
 let burger = doc.querySelector('.burg_menu')
 let bg_top = doc.querySelector('.top')
 let bg_mid = doc.querySelector('.mid')
@@ -90,12 +94,12 @@ burger.addEventListener('click', () => {
     modal_okno.classList.add('not_active');
 })
 
-
-
-
 modal.addEventListener("click", func1)
 cros.addEventListener("click", func2)
 
+
+
+//функционал модалки
 form_modal.addEventListener('submit', (event) => {
     event.preventDefault()
     let form_data = {}
@@ -126,17 +130,7 @@ form_modal.addEventListener('submit', (event) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+//слайдер
 let swiper = new Swiper(".mySwiper", {
     slidesPerView: 4,
     spaceBetween: 50,
@@ -175,7 +169,7 @@ let swiper = new Swiper(".mySwiper", {
 
 
 
-
+//прокрутка страницы
 let scroll_top = window.pageYOffset
 
 window.onscroll = function myFunction() {
@@ -209,6 +203,16 @@ window.onscroll = function myFunction() {
         ssilka[4].classList.add('active')
     }
 };
+
+
+
+
+
+
+
+
+
+
 
 
 
