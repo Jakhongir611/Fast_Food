@@ -1,3 +1,12 @@
+//якорь
+//меню
+//молалка
+//прокрутка страницы
+//form_data
+//карта
+//бегающая линия
+
+
 let doc = document
 let body = doc.body
 let form_modal = doc.forms.form_modal
