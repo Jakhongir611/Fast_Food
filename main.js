@@ -17,48 +17,23 @@ let yakar_contact = doc.querySelector('#contact')
 home.addEventListener('click', (event) => {
     event.preventDefault()
     window.scrollTo({ top: yakar_home.offsetTop - 0, behavior: 'smooth' })
-    home.classList.add('active')
-    about.classList.remove('active')
-    services.classList.remove('active')
-    menu.classList.remove('active')
-    contact.classList.remove('active')
 
 })
 about.addEventListener('click', (event) => {
     event.preventDefault()
     window.scrollTo({ top: yakar_about.offsetTop - 0, behavior: 'smooth' })
-    home.classList.remove('active')
-    about.classList.add('active')
-    services.classList.remove('active')
-    menu.classList.remove('active')
-    contact.classList.remove('active')
 })
 services.addEventListener('click', (event) => {
     event.preventDefault()
     window.scrollTo({ top: yakar_services.offsetTop - 0, behavior: 'smooth' })
-    home.classList.remove('active')
-    about.classList.remove('active')
-    services.classList.add('active')
-    menu.classList.remove('active')
-    contact.classList.remove('active')
 })
 menu.addEventListener('click', (event) => {
     event.preventDefault()
     window.scrollTo({ top: yakar_menu.offsetTop - 0, behavior: 'smooth' })
-    home.classList.remove('active')
-    about.classList.remove('active')
-    services.classList.remove('active')
-    menu.classList.add('active')
-    contact.classList.remove('active')
 })
 contact.addEventListener('click', (event) => {
     event.preventDefault()
     window.scrollTo({ top: yakar_contact.offsetTop - 0, behavior: 'smooth' })
-    home.classList.remove('active')
-    about.classList.remove('active')
-    services.classList.remove('active')
-    menu.classList.remove('active')
-    contact.classList.add('active')
 })
 
 
@@ -83,12 +58,23 @@ let cros = doc.querySelector('.x')
 let func1 = () => {
     modal_okno.classList.toggle('not_active');
     body.style.overflow = 'hidden'
+    bg_top.classList.toggle('top_active')
+    bg_mid.classList.toggle('mid_active')
+    bg_bot.classList.toggle('bot_active')
+    nav.classList.toggle('nav__menu')
+    nav.classList.toggle('nav_burg_active')
+    nav.classList.toggle('nav__toggle_active')
 }
 
 let func2 = () => {
     modal_okno.classList.toggle('not_active');
     body.style.overflow = 'auto'
 }
+
+
+
+
+
 
 modal.addEventListener("click", func1)
 cros.addEventListener("click", func2)
@@ -134,11 +120,12 @@ burger.addEventListener('click', () => {
     bg_top.classList.toggle('top_active')
     bg_mid.classList.toggle('mid_active')
     bg_bot.classList.toggle('bot_active')
+
     nav.classList.toggle('nav__menu')
     nav.classList.toggle('nav_burg_active')
     nav.classList.toggle('nav__toggle_active')
-    nav.classList.toggle('link_active')
 
+    modal_okno.classList.add('not_active');
 })
 
 
@@ -168,70 +155,95 @@ let swiper = new Swiper(".mySwiper", {
 
 let scroll_top = window.pageYOffset
 
-window.onscroll = function () { myFunction() };
-
-function myFunction() {
+window.onscroll = function myFunction() {
     let scroll = doc.body.scrollTop || doc.documentElement.scrollTop;
     let height = doc.documentElement.scrollHeight - doc.documentElement.clientHeight;
     let scrolled = (scroll / height) * 100;
-    doc.getElementById("my_bar_left").style.height = scrolled + "%";
-    doc.getElementById("my_bar_right").style.height = scrolled + "%";
+    doc.getElementById("bar").style.width = scrolled + "%";
+
+    // doc.getElementById("my_bar_left").style.height = scrolled + "%";
+    // doc.getElementById("my_bar_right").style.height = scrolled + "%";
+
+    let scroll_top = window.pageYOffset
+
+    let ssilka = doc.querySelectorAll('.nav__link')
+    for (let item of ssilka) {
+        item.classList.remove('active')
+    }
+    if (scroll_top < 590) {
+        ssilka[0].classList.add('active')
+    }
+    if (scroll_top > 590 && scroll_top < 900) {
+        ssilka[1].classList.add('active')
+    }
+    if (scroll_top > 900 && scroll_top < 1500) {
+        ssilka[2].classList.add('active')
+    }
+    if (scroll_top > 1500 && scroll_top < 2050) {
+        ssilka[3].classList.add('active')
+    }
+    if (scroll_top > 2050 && scroll_top < 3300) {
+        ssilka[4].classList.add('active')
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function showMenu(toggleId, navId) {
+    const toggle = document.getElementById(toggleId);
+    nav = document.getElementById(navId);
+
+    if (toggle && nav) {
+        toggle.addEventListener('click', () => {
+            nav.classList.toggle('show-menu');
+        })
+    }
 }
 
 
+showMenu('nav-toggle', 'nav-menu')
 
+// remove menu mobile
 
+const navlink = document.querySelectorAll('.nav__link');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    function showMenu(toggleId, navId) {
-        const toggle = document.getElementById(toggleId);
-        nav = document.getElementById(navId);
-
-        if (toggle && nav) {
-            toggle.addEventListener('click', () => {
-                nav.classList.toggle('show-menu');
-            })
-        }
-    }
-
-
-    showMenu('nav-toggle', 'nav-menu')
-
-    // remove menu mobile
-
-    const navlink = document.querySelectorAll('.nav__link');
-
-    function lineAction() {
-        const navMenu = document.getElementById('nav-menu');
-        navMenu.classList.remove('show-menu');
-    }
-    navlink.forEach(n => n.addEventListener('click', lineAction));
+function lineAction() {
+    const navMenu = document.getElementById('nav-menu');
+    navMenu.classList.remove('show-menu');
+}
+navlink.forEach(n => n.addEventListener('click', lineAction));
 
 // //scroll section active link
 

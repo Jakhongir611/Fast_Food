@@ -3,7 +3,7 @@
   --header-height: 3rem;
 
   /*========== Colors ==========*/
-  --first-color: #069C54;
+  --first-color: rgb(0, 255, 132);
   --first-color-alt: #048654;
   --title-color: #393939;
   --text-color: #707070;
@@ -173,7 +173,7 @@ img {
   width: 30px;
   height: 25px;
   position: fixed;
-  z-index: 10;
+  z-index: 150;
   top: 10px;
   right: 20px;
 
@@ -323,7 +323,7 @@ img {
   }
 
   .nav_burg_active {
-    width: 30%;
+    width: 230px;
     height: 350px;
     display: flex;
     flex-direction: column;
@@ -824,18 +824,31 @@ img {
 }
 
 
-.progress_left {
+.progress {
+  width: 100%;
+  height: 8px;
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+}
+.bar {
+  height: 8px;
+  width: 0%;
+  background-image: linear-gradient(to right, rgb(255, 0, 0), rgb(0, 0, 255), rgb(0, 255, 0), rgb(255, 0, 0), rgb(0, 0, 255), rgb(0, 255, 0), rgb(255, 0, 0), rgb(0, 0, 255), rgb(0, 255, 0));
+  border-radius: 50px;
+  z-index: 100;
+}
+
+
+
+
+
+
+/* .progress_left {
   width: 2px;
   height: 100vh;
   position: fixed;
   left: 0;
-  z-index: 200;
-}
-.progress_center {
-  width: 2px;
-  height: 100vh;
-  position: fixed;
-  right: 50%;
   z-index: 200;
 }
 .progress_right {
@@ -858,4 +871,12 @@ img {
   background-image: linear-gradient(to top, rgb(255, 0, 0), rgb(0, 0, 255), rgb(0, 255, 0), rgb(255, 0, 0), rgb(0, 0, 255), rgb(0, 255, 0), rgb(255, 0, 0), rgb(0, 0, 255), rgb(0, 255, 0));
   border-radius: 20px;
   z-index: 200;
+} */
+
+@media (max-width: 500px) {
+  .nav_burg_active {
+    width: 45%;
+    height: 300px;
+    font-size: 18px;
 }
+  }
