@@ -3,7 +3,7 @@
   --header-height: 3rem;
 
   /*========== Colors ==========*/
-  --first-color: rgb(0, 255, 132);
+  --first-color: #069C54;
   --first-color-alt: #048654;
   --title-color: #393939;
   --text-color: #707070;
@@ -879,4 +879,7 @@ img {
     height: 300px;
     font-size: 18px;
 }
+  }
+  .nav_nn{
+    display: none;
   }

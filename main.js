@@ -54,16 +54,16 @@ woman.addEventListener('click', () => {
 let modal = doc.querySelector('.button_modal')
 let modal_okno = doc.querySelector('.modal')
 let cros = doc.querySelector('.x')
+let navList = doc.querySelectorAll('.nav__list')
 
 let func1 = () => {
     modal_okno.classList.toggle('not_active');
     body.style.overflow = 'hidden'
-    bg_top.classList.toggle('top_active')
-    bg_mid.classList.toggle('mid_active')
-    bg_bot.classList.toggle('bot_active')
-    nav.classList.toggle('nav__menu')
-    nav.classList.toggle('nav_burg_active')
-    nav.classList.toggle('nav__toggle_active')
+    bg_top.classList.remove('top_active')
+    bg_mid.classList.remove('mid_active')
+    bg_bot.classList.remove('bot_active')
+    nav.classList.remove('nav_burg_active')
+    nav.classList.remove('nav__toggle_active')
 }
 
 let func2 = () => {
@@ -72,6 +72,23 @@ let func2 = () => {
 }
 
 
+let burger = doc.querySelector('.burg_menu')
+let bg_top = doc.querySelector('.top')
+let bg_mid = doc.querySelector('.mid')
+let bg_bot = doc.querySelector('.bot')
+let nav = doc.querySelector('.nav_burg')
+
+
+burger.addEventListener('click', () => {
+    bg_top.classList.toggle('top_active')
+    bg_mid.classList.toggle('mid_active')
+    bg_bot.classList.toggle('bot_active')
+
+    nav.classList.toggle('nav_burg_active')
+    nav.classList.toggle('nav__toggle_active')
+
+    modal_okno.classList.add('not_active');
+})
 
 
 
@@ -102,6 +119,9 @@ form_modal.addEventListener('submit', (event) => {
     }
     console.log(form_data)
     form_modal.reset()
+
+    let json = JSON.stringify(form_data)
+    console.log(json);
 })
 
 
@@ -109,24 +129,6 @@ form_modal.addEventListener('submit', (event) => {
 
 
 
-let burger = doc.querySelector('.burg_menu')
-let bg_top = doc.querySelector('.top')
-let bg_mid = doc.querySelector('.mid')
-let bg_bot = doc.querySelector('.bot')
-let nav = doc.querySelector('.nav_burg')
-
-
-burger.addEventListener('click', () => {
-    bg_top.classList.toggle('top_active')
-    bg_mid.classList.toggle('mid_active')
-    bg_bot.classList.toggle('bot_active')
-
-    nav.classList.toggle('nav__menu')
-    nav.classList.toggle('nav_burg_active')
-    nav.classList.toggle('nav__toggle_active')
-
-    modal_okno.classList.add('not_active');
-})
 
 
 
@@ -149,7 +151,28 @@ let swiper = new Swiper(".mySwiper", {
     },
     keyboard: true,
     loop: true,
+    breakpoints: {
+        300: {
+            slidesPerView: 1,
+        },
+        540: {
+            slidesPerView: 2,
+        },
+        767: {
+            slidesPerView: 3,
+        },
+        992: {
+            slidesPerView: 4,
+        },
+    },
 });
+
+
+
+
+
+
+
 
 
 
