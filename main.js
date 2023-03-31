@@ -257,7 +257,7 @@ function dragEnd(event) {
 }
 function dragOver(event) {
     event.preventDefault();
-    this.style.border = '1px solid #02FF78'
+    this.style.border = '2px solid #069C54'
 }
 function dragLeave(event) {
     this.style.border = '1px solid transparent'
