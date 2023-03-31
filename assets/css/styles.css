@@ -358,12 +358,35 @@ img {
   color: var(--first-color);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 .nav__link {
   transition: .3s;
 }
-.nav__link:hover {
-  color: var(--first-color);
+
+@media (hover: hover) {
+  .nav__link:hover{
+    color: var(--first-color);
+  }
 }
+
+@media (hover: none) {
+  .nav__link:active{
+    color: var(--first-color);
+  }
+}
+
 .nav__toggle {
   font-size: 1.3rem;
   cursor: pointer;
