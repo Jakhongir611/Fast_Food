@@ -910,18 +910,14 @@ img {
   background: #101c65;
   border-radius: 25px;
   border: none;
-  margin-top: -1px;
-  margin-left: 30px;
   transition: 300ms;
 }
 .moon_sun {
   width: 36px;
   height: 36px;
-  background: rgba(174, 174, 174, 0.473);
+  background: rgba(174, 174, 174, 0.288);
   border-radius: 25px;
   border: none;
-  margin-top: -1px;
-  margin-left: 30px;
   transition: 300ms;
 }
 

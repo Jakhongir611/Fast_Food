@@ -626,6 +626,7 @@ img {
 
 .footer__description {
   display: block;
+  
   font-size: var(--small-font-size);
   margin: .25rem 0 var(--mb-3);
 }
@@ -927,6 +928,8 @@ img {
   background: rgba(174, 174, 174, 0.473);
   border-radius: 25px;
   border: none;
+  margin-top: -1px;
+  margin-left: 30px;
   transition: 300ms;
 }
 
@@ -936,6 +939,8 @@ img {
   background: rgb(255, 255, 255);
   border-radius: 25px;
   border: none;
+  margin-top: -1px;
+  margin-left: 30px;
   transition: 300ms;
 }
 
