@@ -289,7 +289,11 @@ img {
   background-color: #069C54;
 }
 
-
+.swiper-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 
 

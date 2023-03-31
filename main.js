@@ -163,6 +163,7 @@ let swiper = new Swiper(".mySwiper", {
         clickable: true,
         dynamicBullets: true,
     },
+    allowTouchMove: false,
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -230,8 +231,42 @@ window.onscroll = function myFunction() {
 
 
 
+let sliderSlides = doc.querySelectorAll('.swiper-slide')
+sliderSlides.forEach(element => {
+    element.addEventListener('dragstart', dragStart)
+    element.addEventListener('dragover', dragOver)
+    element.addEventListener('dragleave', dragLeave)
+    element.addEventListener('drop', Dropp)
+    element.addEventListener('dragend', dragEnd)
+});
 
+let dragElement;
+let el1;
+let el1Vnutri;
 
+function dragStart(event) {
+    dragElement = event.target;
+    dragElement.classList.add('dragging');
+
+    el1 = this
+    el1Vnutri = this.firstElementChild
+}
+function dragEnd(event) {
+    this.style.border = '1px solid transparent'
+}
+function dragOver(event) {
+    event.preventDefault();
+    this.style.border = '1px solid #02FF78'
+}
+function dragLeave(event) {
+    this.style.border = '1px solid transparent'
+}
+function Dropp() {
+    event.preventDefault();
+    this.style.border = '1px solid transparent'
+    this.append(el1Vnutri)
+    el1.append(this.firstElementChild)
+}
 
 
 
