@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--========== CSS ==========-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <link id="css" rel="stylesheet" href="./assets/css/styles.css">
+
+    <!-- <link rel="stylesheet" href="./assets/css/black_style.css"> -->
     <link rel="icon" href="./assets/img/pizza.svg">
     <title>Responsive website food</title>
 </head>
@@ -32,7 +35,17 @@
     <!--========== HEADER ==========-->
     <header class="l-header" id="header">
         <nav class="nav bd-container">
-            <a href="#" class="nav__logo">Tasty</a>
+            <div class="myHeader">
+                <a href="#" class="nav__logo">Tasty</a>
+                <div class="subject">
+                    <button id="theme_sun" class="sun_moon">
+                        <img src="./assets/img/sun.svg" width="24" alt="">
+                    </button>
+                    <button id="theme_moon" class="moon_sun">
+                        <img src="./assets/img/moon.svg" alt="">
+                    </button>
+                </div>
+            </div>
 
             <div class="burg_menu">
                 <div class="item top"></div>
@@ -42,7 +55,7 @@
 
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="" class="nav__link active-link">Home</a></li>
+                    <li class="nav__item"><a href="" class="nav__link">Home</a></li>
                     <li class="nav__item"><a href="" class="nav__link">About</a></li>
                     <li class="nav__item"><a href="" class="nav__link">Services</a></li>
                     <li class="nav__item"><a href="" class="nav__link">Menu</a></li>
@@ -580,8 +593,8 @@
 
         <p class="footer__copy">&#169; 2020 Bedimcode. All right reserved</p>
     </footer>
-    <!--========== MAIN JS ==========-->
 
+    <!--========== MAIN JS ==========-->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="./assets/assets/js/main.js"></script>
     <script src="./main.js"></script>

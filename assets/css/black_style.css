@@ -1,15 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+
 /*===== VARIABLES CSS =====*/
 :root {
   --header-height: 3rem;
 
   /*========== Colors ==========*/
-  --first-color: #069C54;
+  --first-color: #00a455;
   --first-color-alt: #048654;
-  --title-color: #393939;
-  --text-color: #707070;
+  --title-color: #FFFFFF;
+  --text-color: #FFFFFF;
   --text-color-light: #A6A6A6;
-  --body-color: #FBFEFD;
-  --container-color: #FFFFFF;
+  --body-color: #101c65;
+  --container-color: #222c6e;
 
   /*========== Font and typography ==========*/
   --body-font: 'Poppins', sans-serif;
@@ -37,6 +43,23 @@
   --z-tooltip: 10;
   --z-fixed: 100;
 }
+
+body {
+  background: rgb(16, 28, 101);
+  color: white;
+}
+
+
+body {
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+
 
 @media screen and (min-width: 768px) {
   :root {
@@ -79,17 +102,9 @@ body.dark-theme {
   cursor: pointer;
 }
 
-body {
-  margin: var(--header-height) 0 0 0;
-  font-family: var(--body-font);
-  font-size: var(--normal-font-size);
-  background-color: var(--body-color);
-  color: var(--text-color);
-  line-height: 1.6;
-}
 
 a {
-  color: green;
+  color: rgb(0, 225, 0);
 }
 
 h1,
@@ -361,9 +376,11 @@ img {
 .nav__link {
   transition: .3s;
 }
+
 .nav__link:hover {
   color: var(--first-color);
 }
+
 .nav__toggle {
   font-size: 1.3rem;
   cursor: pointer;
@@ -900,33 +917,30 @@ img {
   width: 65px;
   height: 35px;
   border-radius: 25px;
-  border: 1px solid black;
+  border: 1px solid white;
   overflow: hidden;
 }
 
 .sun_moon {
   width: 36px;
   height: 36px;
-  background: #101c65;
-  border-radius: 25px;
-  border: none;
-  margin-top: -1px;
-  margin-left: 30px;
-  transition: 300ms;
-}
-.moon_sun {
-  width: 36px;
-  height: 36px;
   background: rgba(174, 174, 174, 0.473);
   border-radius: 25px;
   border: none;
-  margin-top: -1px;
-  margin-left: 30px;
+  transition: 300ms;
+}
+
+.moon_sun {
+  width: 24px;
+  height: 24px;
+  background: rgb(255, 255, 255);
+  border-radius: 25px;
+  border: none;
   transition: 300ms;
 }
 
 
-.none{
+.none {
   display: none;
   transition: 300ms;
   transform: scale(1.05);

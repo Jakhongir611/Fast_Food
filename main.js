@@ -108,6 +108,21 @@ cros.addEventListener("click", func2)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //функционал модалки
 form_modal.addEventListener('submit', (event) => {
     event.preventDefault()
@@ -287,3 +302,43 @@ navlink.forEach(n => n.addEventListener('click', lineAction));
 
 
 // window.addEventListener('scroll', console.log(window));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let sun_moon = doc.querySelector('.sun_moon')
+let moon_sun = doc.querySelector('.moon_sun')
+let css = doc.querySelector('#css')
+let link_css_white = "./assets/css/styles.css"
+let link_css_black = "./assets/css/black_style.css"
+let img_moon = "./assets/img/moon.svg"
+let img_sun = "./assets/img/sun.svg"
+const subject = doc.querySelector('.subject')
+sun_moon.className = "none"
+let func_1 = () => {
+    if (moon_sun.className == "moon_sun") {
+        css.href = link_css_black
+        sun_moon.src = img_sun
+        moon_sun.className = "none"
+        sun_moon.className = "sun_moon"
+    } else {
+        css.href = link_css_white
+        sun_moon.src = img_moon
+        sun_moon.className = "none"
+        moon_sun.className = "moon_sun"
+    }
+}
+
+subject.addEventListener('click', func_1)
+
+
